@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Quranic Prayer Times - A Research by Suleymaniye Foundation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<meta name="copyright" content="Copyright © Suleymaniye Prayer Times" />
+		<meta name="author" content="by: YSNSHN.com" />
+		<meta name="reply-to" content="contact@ysnshn.com" />
+		<meta name="distribution" content="global" />
+		<meta name="rating" content="general">
+		<meta name="robots" content="all, index, follow" />
+
+		<meta name="description" content="Suleymaniye Prayer Times gives you the prayer times according to Quranic studies, based on one's location anywhere around the world. " />
+		
+		<meta name="keywords" content="Suleymaniye Prayer Times, ." />
+
+		<link rel="shortcut icon" href="sv-256x256.jpg">
+		
+		<!-- <link rel="stylesheet" href="header.css" type="text/css" media="screen" /> -->
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+		<!-- <script type="text/javascript" src="https://github.com/mourner/suncalc/blob/master/suncalc.js"></script> -->
+		
+		<script type="text/javascript" src="suncalc.js"></script>
+			
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+		* {
+		  box-sizing: border-box;
+		}
+
+		/* Create three equal columns that floats next to each other */
+		.column {
+		  float: left;
+		  width: 50%;
+		  padding: 2px;
+		  border-color: white;
+		  border-bottom: .1em solid; 
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+		
+		#table{
+			display: table;	
+		} 
+		
+		.tr{
+			display: table-row; 
+		} 
+		
+		.td{
+			display: table-cell; 
+		}
+		</style>
+
+	</head>
+	<body class="is-preload" onload="toggleWatchBtn">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main" style="overflow: auto;">
+
+				<!-- Header -->
+					<header id="header" style="background: rgba(0,0,0, 0.7); border-radius: 50px; padding: 10px; overflow: auto; padding-bottom: 30px;">
+						<h1>Quranic Prayer Times</h1>
+						<p style="padding-bottom: 15px;">A Scientific and Quranic Research (Link: <a href="Quranic-and-Scientific-Prayer-Times.pdf" target="_blank">Brief</a> / <a href="Prayer-Times-from-the-Equator-to-the-Poles_Layout.pdf" target="_blank">In Detail</a>) by <a href="https://www.islamandquran.org/contact" target="_blank">Suleymaniye Research Foundation</a></p>
+						<!-- https://www.islamandquran.org/research/prayer-times-from-the-equator-to-the-poles.html --> 
+						<button type="button" id="toggleWatchBtn">Get Prayer Times</button>	
+						<p id="now"></p>
+						<p id="geos"></p>
+						<div class="row">
+							<div class="column">Sahur: </div>
+							<div class="column" id="sahur"> </div>
+						</div>
+						<div class="row">
+							<div class="column">Imsak: </div>
+							<div class="column" id="imsak"> </div>
+						</div>
+						<div class="row">
+							<div class="column">Sunrise: </div>
+							<div class="column" id="sunrise"> </div>
+						</div>
+						<div class="row">
+							<div class="column">Zuhr: </div>
+							<div class="column" id="zuhr"> </div>
+						</div>
+						<div class="row">
+							<div class="column">Asr: </div>
+							<div class="column" id="asr"> </div>
+						</div>
+						<div class="row">
+							<div class="column">Maghrib: </div>
+							<div class="column" id="maghrib"> </div>
+						</div>
+						<div class="row">
+							<div class="column">Isha: </div>
+							<div class="column" id="isha"> </div>
+						</div>
+						<div class="row">
+							<div class="column">Isha End: </div>
+							<div class="column" id="ishaend"> </div>
+						</div>
+						<!--
+						<nav>
+							<ul>
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</nav>
+						-->
+						<p style="padding-bottom: 20px;"></p>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright" style="background: rgba(0,0,0, 0.7); border-radius: 50px; padding: 10px;">&copy; Quranic Prayer Times. | <a href="https://ysnshn.com" target="_blank">YSNSHN</a>.</span>
+					</footer>
+					</header>
+
+			</div>
+		</div>
+					
+		<script> 
+		
+			var watchID, lat1, long1, alt1, now, times; 
+
+			function showPosition() {
+				if (navigator.geolocation) {
+					watchID = navigator.geolocation.watchPosition(successCallback);
+				} else {
+					alert ("Geolocation is not supported by this browser.");
+				}
+			} 
+			
+			function successCallback(position) {
+				toggleWatchBtn.textContent = "Stop Location Check";
+				
+				// Check position has been changed or not before doing anything
+				if (prevLat != position.coords.latitude || prevLong != position.coords.longitude) {
+					
+					// Set previous location
+					var prevLat = position.coords.latitude;
+					var prevLong = position.coords.longitude;
+					
+					lat1 = position.coords.latitude;
+					long1 = position.coords.longitude;
+					alt1 = position.coords.altitude;
+
+					sunCT(); 
+			   }
+				
+			} 
+			
+			function startWatch() {
+
+				var toggleWatchBtn = document.getElementById("toggleWatchBtn");
+				
+				toggleWatchBtn.onclick = function() {
+					if (watchID) {
+						toggleWatchBtn.textContent = "Start Location Check";
+						navigator.geolocation.clearWatch(watchID);
+						watchID = false;
+					} else {
+						toggleWatchBtn.textContent = "Aquiring GeoLocation...";
+						showPosition(); 
+					}
+				}
+			}
+			
+			function sunCT() {
+			/*  Sun Calc */
+
+			now = new Date(); 
+			document.getElementById("now").textContent = "Local Time: " + now;
+
+			document.getElementById("geos").textContent = "Latitude: " + lat1 + ", " + "Longitude: " + long1; 
+			
+			// get today's sunlight times
+			times = SunCalc.getTimes(now, lat1, long1, alt1);
+
+			// format sunrise time from the Date object
+			var nightEndStr, imsakStr, sunriseStr, solarNoonStr, asrStr, sunsetStr, ishaStr, nightStr; 
+			
+			let nightEndHr = times.nightEnd.getHours(); 
+			if (nightEndHr < 10) {nightEndHr = '0' + nightEndHr;} 
+			let nightEndMnt = times.nightEnd.getMinutes(); 
+			if (nightEndMnt < 10) {nightEndMnt = '0' + nightEndMnt;} 
+			nightEndStr = nightEndHr + ":" + nightEndMnt; 
+			document.getElementById("sahur").textContent = nightEndStr;
+
+			let imsakStrHr = times.imsak.getHours(); 
+			if (imsakStrHr < 10) {imsakStrHr = '0' + imsakStrHr;} 
+			let imsakStrMnt = times.imsak.getMinutes(); 
+			if (imsakStrMnt < 10) {imsakStrMnt = '0' + imsakStrMnt;} 
+			imsakStr = imsakStrHr + ":" + imsakStrMnt; 
+			document.getElementById("imsak").textContent = imsakStr;
+
+			let sunriseStrHr = times.sunrise.getHours(); 
+			if (sunriseStrHr < 10) {sunriseStrHr = '0' + sunriseStrHr;} 
+			let sunriseStrMnt = times.sunrise.getMinutes(); 
+			if (sunriseStrMnt < 10) {sunriseStrMnt = '0' + sunriseStrMnt;} 
+			sunriseStr = sunriseStrHr + ":" + sunriseStrMnt; 
+			document.getElementById("sunrise").textContent = sunriseStr;
+
+			let solarNoonStrHr = times.solarNoon.getHours(); 
+			if (solarNoonStrHr < 10) {solarNoonStrHr = '0' + solarNoonStrHr;} 
+			let solarNoonStrMnt = times.solarNoon.getMinutes(); 
+			if (solarNoonStrMnt < 10) {solarNoonStrMnt = '0' + solarNoonStrMnt;} 
+			solarNoonStr = solarNoonStrHr + ":" + solarNoonStrMnt; 
+			document.getElementById("zuhr").textContent = solarNoonStr;
+
+			let asrStrHr = times.asr.getHours(); 
+			if (asrStrHr < 10) {asrStrHr = '0' + asrStrHr;} 
+			let asrStrMnt = times.asr.getMinutes(); 
+			if (asrStrMnt < 10) {asrStrMnt = '0' + asrStrMnt;} 
+			asrStr = asrStrHr + ":" + asrStrMnt; 
+			document.getElementById("asr").textContent = asrStr;
+
+			let sunsetStrHr = times.sunset.getHours(); 
+			if (sunsetStrHr < 10) {sunsetStrHr = '0' + sunsetStrHr;} 
+			let sunsetStrMnt = times.sunset.getMinutes(); 
+			if (sunsetStrMnt < 10) {sunsetStrMnt = '0' + sunsetStrMnt;} 
+			sunsetStr = sunsetStrHr + ":" + sunsetStrMnt; 
+			document.getElementById("maghrib").textContent = sunsetStr;
+
+			let ishaStrHr = times.isha.getHours(); 
+			if (ishaStrHr < 10) {ishaStrHr = '0' + ishaStrHr;} 
+			let ishaStrMnt = times.isha.getMinutes(); 
+			if (ishaStrMnt < 10) {ishaStrMnt = '0' + ishaStrMnt;} 
+			ishaStr = ishaStrHr + ":" + ishaStrMnt; 
+			document.getElementById("isha").textContent = ishaStr;
+
+			let nightStrHr = times.night.getHours(); 
+			if (nightStrHr < 10) {nightStrHr = '0' + nightStrHr;} 
+			let nightStrMnt = times.night.getMinutes(); 
+			if (nightStrMnt < 10) {nightStrMnt = '0' + nightStrMnt;} 
+			nightStr = nightStrHr + ":" + nightStrMnt; 
+			document.getElementById("ishaend").textContent = nightStr;
+
+			}
+
+
+			document.addEventListener("DOMContentLoaded", function() {
+			// Your initialization code here
+			startWatch();
+			});
+		
+			window.onload = function() { document.body.classList.remove('is-preload'); } 
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
+	</body>
+</html>
