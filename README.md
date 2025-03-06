@@ -15,7 +15,7 @@ For a quick info on the prayer times: The daytime has two prayers, the nighttime
 - "Imsak" is the time of the Fajr Prayer, starts from the black-and-white line stage till the sunrise. It marks the last prayer of the day where on the contrary to the popular belief of being the first prayer because the night ends with the sun rising again for the next day (The verse for the day coming before the night: Surah Yasin, 36:40).
 - Both "Sahur" nad "Imsak" times are in the sunrise twilight time of the night where the sun lights start to come to the relative location which also marks the end of the scientific night time till the sunrise. 
 - "Sunrise" marks the end of the Fajr Prayer.
-- "Zuhr" is the Noon Prayer which could be prayed one after one with the Asr Prayer both daytime prayers end with the sunset. 
+- "Zuhr" is the Noon Prayer which could be prayed one after one with the Asr Prayer both daytime prayers start with the sun in the highest position on the noon and end with the sunset. 
 - "Asr" is the Afternoon Prayer ends with the sunset.
 - "Maghrib" is the initial and first prayer of the nighttime, prayed in the sunset twilight time together with the Isha Prayer which could be preayed one after one till the end of Isha Prayer time.
 - "Isha" is the second nighttime prayer ends with the sunset twilight ending where the scientific night time starts.
