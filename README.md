@@ -11,7 +11,7 @@ For detailed references for the times of prayers, please check the PDF files for
 
 For a quick info on the prayer times: The daytime has two prayers, the nighttime has three prayers (the relative Quranic verses and Scientific info: https://github.com/ysnshn/Scientific-and-Quranic-prayer-times/blob/main/Quranic-and-Scientific-Prayer-Times.pdf). 
 
-- "Sahur" is the relative Sahar time, also referred to as the False Fajr time where the sunlights start to come to the Earth on the relative place. It is the time of breakfast for fasting in the month of Ramadan until the sun lights start to make a black-and-white line on the horizon (Surah Baqarah, 2:187).
+- "Sahur" is the relative Sahar time, also referred to as the False Fajr time where the sun lights start to come to the Earth on the relative location. It is the time of breakfast for fasting in the month of Ramadan until the sun lights start to make a black-and-white line on the horizon (Surah Baqarah, 2:187).
 - "Imsak" is the time of the Fajr Prayer, starts from the black-and-white line stage till the sunrise. It marks the last prayer of the day where on the contrary to the popular belief of being the first prayer because the night ends with the sun rising again for the next day (The verse for the day coming before the night: Surah Yasin, 36:40).
 - Both "Sahur" nad "Imsak" times are in the sunrise twilight time of the night where the sun lights start to come to the relative location which also marks the end of the scientific night time till the sunrise. 
 - "Sunrise" marks the end of the Fajr Prayer.
