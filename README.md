@@ -20,3 +20,7 @@ For a quick info on the prayer times: The daytime has two prayers, the nighttime
 - "Maghrib" is the initial and first prayer of the nighttime, prayed in the sunset twilight time together with the Isha Prayer which could be preayed one after one till the end of Isha Prayer time.
 - "Isha" is the second nighttime prayer ends with the sunset twilight ending where the scientific night time starts.
 - "Isha End" marks the ending time of the both sunset twilight prayers of Maghrib and Isha (Isha has the ending time, contrary to the popular belief of Isha time extended till Fajr. The Verse mentioning the after Isha time where it is the sleeping time that kids should not enter parents' room without getting permission: Surah Nur 24:58).
+<<<<<<< HEAD
+=======
+
+>>>>>>> 352f7937aeb76191b0510bb40bb4ccba25fb4842
