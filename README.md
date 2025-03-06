@@ -7,7 +7,7 @@ The tool used for sun position calculations are from: https://github.com/mourner
 
 The calculations give you the prayer times according to your time and place. It gets your location and your local time. 
 
-For detailed references for the times of prayers, please cehck the PDF files for both the scientific approach derived from the Quran and the Quranic references. 
+For detailed references for the times of prayers, please check the PDF files for both the scientific approach derived from the Quran and the Quranic references. 
 
 For a quick info on the prayer times: The daytime has two prayers, the nighttime has three prayers (the relative Quranic verses and Scientific info: https://github.com/ysnshn/Scientific-and-Quranic-prayer-times/blob/main/Quranic-and-Scientific-Prayer-Times.pdf). 
 
