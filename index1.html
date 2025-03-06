@@ -78,7 +78,7 @@
 			<div id="main" style="overflow: auto;">
 
 				<!-- Header -->
-					<header id="header" style="background: rgba(0,0,0, 0.7); border-radius: 50px; padding: 10px; overflow: auto;">
+					<header id="header" style="background: rgba(0,0,0, 0.7); border-radius: 50px; padding: 10px; overflow: auto; padding-bottom: 30px;">
 						<h1>Quranic Prayer Times</h1>
 						<p>A Research by Suleymaniye Research Foundation</p>
 						<button type="button" id="getSunTimes" onclick="showPosition()">Get Prayer Times</button>
@@ -127,16 +127,18 @@
 							</ul>
 						</nav>
 						-->
-						<p></p>
-					</header>
-
-			</div>
-		</div>
+						<p style="padding-bottom: 20px;"></p> 
 
 				<!-- Footer -->
 					<footer id="footer">
 						<span class="copyright" style="background: rgba(0,0,0, 0.7); border-radius: 50px; padding: 10px;">&copy; Quranic Prayer Times. | <a href="https://ysnshn.com" target="_blank">YSNSHN</a>.</span>
 					</footer>
+						
+						
+					</header>
+
+			</div>
+		</div>
 					
 		<script> 
 		
@@ -167,7 +169,7 @@
 			now = new Date(); 
 			document.getElementById("now").textContent = "Local Time: " + now;
 
-			document.getElementById("geos").textContent = "Latitude: " + lat1 + ", " + "Longitude: " + long1; 
+			document.getElementById("geos").textContent = "Latitude: " + lat1 + ", " + "Longitude: " + long1 + ", " + "Altitude: " + alt1; 
 			
 			// get today's sunlight times for London
 			times = SunCalc.getTimes(now, lat1, long1, alt1);
